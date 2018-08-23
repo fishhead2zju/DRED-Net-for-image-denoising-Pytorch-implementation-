@@ -29,7 +29,7 @@ class init_conv(nn.Module):
         #self.conv = BasicConv2d(in_ch,out_ch,k_size,pad)
         self.conv = CDilated(in_ch,out_ch,k_size,d=1)
         self.bn = nn.BatchNorm2d(out_ch)
-        self.act = nn.PReLU()
+        self.act = nn.ReLU()
 
     def forward(self,x):
         conv = self.conv(x)
